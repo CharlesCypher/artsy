@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,400&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Poppins&family=STIX+Two+Text:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="marketplace.css" />
+    <script src="./marketplace.js" async></script>
+    <title>Artsy | Marketplace</title>
+  </head>
+  <body>
+    <div class="artsy">
+      <header class="artsy-header">
+        <div class="logo">ARTSY.</div>
+        <nav class="artsy-nav" role="navigation">
+          <ul class="artsy-nav-links">
+            <li><a class="artsy-nav-link active" href="index.html">Home</a></li>
+            <li><a class="artsy-nav-link" href="marketplace.html">Marketplace</a></li>
+            <li><a class="artsy-nav-link" href="#">Auctions</a></li>
+            <li><a class="artsy-nav-link" href="#">Drop</a></li>
+          </ul>
+        </nav>
+        <div class="artsy-header-icons">
+          <img src="./images/icon-images/search.svg" alt="search" />
+          <img src="./images/icon-images/cart.svg" alt="cart" />
+          <img src="./images/icon-images/bell.svg" alt="notification" />
+        </div>
+      </header>
+
+      <section class="product-section-wrapper">
+        <div class="product-search-container">
+          <input type="search" name="" id="" placeholder="Search" />
+          <div class="result-container">
+            <h3 class="res-outcome">See 1-6 of 15 results</h3>
+            <div class="sort-by">
+              <h3>Sort by <i class="fa-solid fa-angle-down"></i></h3>
+            </div>
+          </div>
+        </div>
+        <div class="product-section-container">
+          <div class="product-section-split">
+            <div class="product-section-sidemenu">
+              <div class="product-section-sidemenu-details">
+                <div class="title">
+                  <i class="fa-solid fa-sliders"></i>
+                  Filter
+                </div>
+              </div>
+            </div>
+            <div class="product-section-products" id="productLayout"></div>
+          </div>
+        </div>
+        <div class="modal-container">
+          <div class="modal"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
