@@ -21,7 +21,7 @@ function loadProducts() {
   const productItems = products
     .map((item) => {
       return `<div class="product-card">
-                <img src="${item.image}" alt="${"product " + item.id}" />
+                <img src="${item.image}" alt="${"product " + item.id}" class="product-card-img"/>
                 <div class="product-name">${item.name}</div>
                 <div class="product-price">${"$" + item.price.toFixed(2)}</div>
             </div>`;
@@ -31,29 +31,41 @@ function loadProducts() {
   productLayout.innerHTML = productItems;
 
   const productCard = document.querySelectorAll(".product-card");
-
-  console.log(productCard);
+  const modalCardName = document.querySelector(".modal-product-name");
+  const modalCardImage = document.querySelector(".img-container");
 
   productCard.forEach((card) => {
     card.addEventListener("click", () => {
-      //   let price = card.querySelector(".product-price");
-      //   console.log(price.innerText);
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+      const modal = document.querySelector(".modal-container");
+      modal.classList.add("show-modal");
+      const productName = card.querySelector(".product-name");
+      modalCardName.innerHTML = productName.innerText;
+      const productImage = card.querySelector(".product-card-img");
+      //   console.log(productImage.src);
+      modalCardImage.innerHTML = `<img src="${productImage.src}"/>`;
+      const price = card.querySelector(".product-price");
+      // console.log(price.innerText);
     });
   });
 }
 
-console.log("Start");
+// console.log("Start");
 
-function loginUser(email, password, call) {
-  setTimeout(() => {
-    console.log("Now we have the data");
-    call({ userEmail: email });
-    console.log(password);
-  }, 2000);
-}
+// function loginUser(email, password, call) {
+//   setTimeout(() => {
+//     console.log("Now we have the data");
+//     call({ userEmail: email });
+//     console.log(password);
+//   }, 2000);
+// }
 
-const persons = loginUser("devedf@goomail.com", 123456, function (user) {
-  console.log(user);
-});
+// const persons = loginUser("devedf@goomail.com", 123456, function (user) {
+//   console.log(user);
+// });
 
-console.log("Finish");
+// console.log("Finish");
