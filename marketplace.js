@@ -33,39 +33,30 @@ function loadProducts() {
   const productCard = document.querySelectorAll(".product-card");
   const modalCardName = document.querySelector(".modal-product-name");
   const modalCardImage = document.querySelector(".img-container");
+  const modalCardPrice = document.querySelector(".modal-product-price");
 
   productCard.forEach((card) => {
     card.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+      //   window.scrollTo({
+      //     top: 0,
+      //     left: 0,
+      //     behavior: "smooth",
+      //   });
       const modal = document.querySelector(".modal-container");
       modal.classList.add("show-modal");
+      const overlay = document.querySelector(".overlay");
+      overlay.classList.add("active");
       const productName = card.querySelector(".product-name");
       modalCardName.innerHTML = productName.innerText;
       const productImage = card.querySelector(".product-card-img");
-      //   console.log(productImage.src);
       modalCardImage.innerHTML = `<img src="${productImage.src}"/>`;
       const price = card.querySelector(".product-price");
-      // console.log(price.innerText);
+      modalCardPrice.innerText = price.innerText;
+      const closeButton = document.querySelector(".close-btn");
+      closeButton.addEventListener("click", () => {
+        modal.classList.remove("show-modal");
+        overlay.classList.remove("active");
+      });
     });
   });
 }
-
-// console.log("Start");
-
-// function loginUser(email, password, call) {
-//   setTimeout(() => {
-//     console.log("Now we have the data");
-//     call({ userEmail: email });
-//     console.log(password);
-//   }, 2000);
-// }
-
-// const persons = loginUser("devedf@goomail.com", 123456, function (user) {
-//   console.log(user);
-// });
-
-// console.log("Finish");

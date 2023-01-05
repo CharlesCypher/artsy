@@ -127,6 +127,7 @@ header {
 
 /* MarketPlace Search */
 .product-section-wrapper {
+    position: relative;
     width: 100%;
     max-width: 1300px;
     margin: auto;
@@ -191,14 +192,8 @@ header {
 }
 
 /* MarketPlace Products */
-.product-section-wrapper {
-    position: relative;
-    width: 100%;
-}
-
 .product-section-container {
     width: 100%;
-    /* display: flex; */
 }
 
 .product-section-split {
@@ -207,25 +202,22 @@ header {
 }
 
 .product-section-sidemenu {
-    /* background-color: brown; */
     position: relative;
     min-width: 20%;
 }
 
 .product-section-sidemenu-details {
     position: fixed;
-    /* left: 0; */
 }
 
 .product-section-products {
-    /* background-color: chocolate; */
     width: 100%;
 }
 
 .product-section-products-grid {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(242px, 1fr));
     place-items: center;
     gap: 1.5rem;
     /* margin: auto; */
@@ -237,9 +229,18 @@ header {
     background-color: var(--white);
     box-shadow: 0px 34px 68px rgba(217, 225, 244, 0.36);
     padding: 1rem;
+    overflow: hidden;
     margin-bottom: 2rem;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.product-card-img {
+    transition: all .3s ease-in-out;
+}
+
+.product-card-img:hover {
+    transform: scale(1.02);
 }
 
 .product-name {
@@ -255,23 +256,52 @@ header {
 
 /* Cart Modal */
 .modal-container {
-    display: none;
-
-}
-
-.show-modal {
     display: block;
-    width: 100%;
+    width: 1230px;
+    max-width: 80%;
     height: auto;
-    position: absolute;
-    top: 0%;
-    left: 0%;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(0);
+    transition: all .2s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     border: 1px solid var(--clr-dark);
     background-color: white;
     padding: 2rem;
     margin: auto;
-    z-index: 999;
+    z-index: 888;
+}
+
+.modal-container.show-modal {
+    transform: translate(-50%, -40%) scale(1);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(5px);
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.close-btn {
+    position: absolute;
+    top: -4%;
+    right: 0;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 888;
 }
 
 .modal {
@@ -281,6 +311,7 @@ header {
 }
 
 .modal-split {
+    position: relative;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -291,8 +322,10 @@ header {
 
 .modal-split .img-container {
     width: 525px;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    border: 1px solid #000000;
+    padding: 2em;
 }
 
 .modal-split img {
