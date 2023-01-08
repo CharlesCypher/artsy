@@ -61,24 +61,29 @@
         </div>
         <div class="modal-container">
           <div class="modal">
-            <i class="fa-solid fa-xmark close-btn"></i>
             <div class="modal-split">
               <div class="img-container"></div>
               <div class="modal-details-container">
-                <h2 class="modal-product-name"></h2>
-                <h4 class="modal-product-price"></h4>
-                <div class="modal-details-two">
-                  <h3 class="modal-product-creator"></h3>
-                  <h5 class="modal-product-origin"></h5>
-                  <h5 class="modal-product-views"></h5>
-                  <input type="number" id="" class="quantity-input" value="1" />
-                  <button class="cart-btn" id="add-to-cart">Add to cart</button>
+                <div class="modal-details-head">
+                  <h2 class="modal-product-name"></h2>
+                  <h4 class="modal-product-price"></h4>
+                </div>
+                <div class="modal-details-body">
+                  <h3 class="modal-product-creator">Creator</h3>
+                  <h5 class="modal-prodcut-country">Made in <span class="country">Italy</span></h5>
+                  <h4 class="modal-product-views">Total views: <span class="views">1.7K</span>views</h4>
+                  <div class="quantity-container">
+                    <i class="fa-solid fa-minus quantity-btn decrease"></i>
+                    <input type="number" class="quantity-input" value="1" />
+                    <i class="fa-solid fa-plus quantity-btn increase"></i>
+                  </div>
+                  <button class="add-to-cart" id="add-to-cart-btn">Add to cart</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="overlay"></div>
+        <div class="overlay"><i class="fa-solid fa-xmark close-btn"></i></div>
       </section>
     </div>
   </body>
