@@ -75,7 +75,6 @@ function loadProducts() {
           quantityInput.value--;
           if (isNaN(quantityInput.value) || quantityInput.value <= 0) {
             quantityInput.value = 1;
-            // updateItemTotal(price, quantityInput.value);
           }
           const priceNumber = card.querySelector(".product-price");
           let price = parseFloat(priceNumber.innerText.replace("$", ""));
@@ -86,9 +85,6 @@ function loadProducts() {
           const priceNumber = card.querySelector(".product-price");
           let price = parseFloat(priceNumber.innerText.replace("$", ""));
           updateItemTotal(price, quantityInput.value);
-
-          // let quantity = e.target;
-          // let quantityValue = quantity.value;
         }
       }
 
