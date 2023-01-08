@@ -121,8 +121,9 @@ img:not(.logo) {
     justify-content: space-between;
 }
 
-.artsy-header-icons img {
+.artsy-header-icons i {
     max-width: 100%;
+    font-size: 1.5rem;
     height: auto;
     cursor: pointer;
 }
@@ -164,6 +165,16 @@ img:not(.logo) {
     transition-duration: 150ms;
     transition-duration: 700ms;
     gap: 1rem;
+}
+
+.artsy-carousel-card {
+    width: 358px;
+    height: auto;
+}
+
+.artsy-carousel-card img {
+    width: 100%;
+    height: auto;
 }
 
 .carousel_img_003 {
@@ -349,12 +360,13 @@ img:not(.logo) {
 
 .arsty-upcoming-banner-container {
     position: relative;
-    background-image: url("./images/upcoming-banner.png");
+    background-image: url("https://images.unsplash.com/photo-1580687580441-96dbadf8f3c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGdhbGxlcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* background-origin: (0, 0); */
+    background-origin: (0, 0);
     width: 100%;
+    /* filter: grayscale(1); */
     margin-bottom: 1rem;
 }
 

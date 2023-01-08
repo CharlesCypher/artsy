@@ -17,6 +17,12 @@ const productLayout = document.createElement("div");
 productLayout.classList.add("product-section-products-grid");
 productSection.appendChild(productLayout);
 
+let total = 0;
+
+const modalCardName = document.querySelector(".modal-product-name");
+const modalCardImage = document.querySelector(".img-container");
+const modalCardPrice = document.querySelector(".modal-product-price");
+
 function loadProducts() {
   const productItems = products
     .map((item) => {
@@ -31,17 +37,9 @@ function loadProducts() {
   productLayout.innerHTML = productItems;
 
   const productCard = document.querySelectorAll(".product-card");
-  const modalCardName = document.querySelector(".modal-product-name");
-  const modalCardImage = document.querySelector(".img-container");
-  const modalCardPrice = document.querySelector(".modal-product-price");
 
   productCard.forEach((card) => {
     card.addEventListener("click", () => {
-      //   window.scrollTo({
-      //     top: 0,
-      //     left: 0,
-      //     behavior: "smooth",
-      //   });
       const modal = document.querySelector(".modal-container");
       modal.classList.add("show-modal");
       const overlay = document.querySelector(".overlay");
@@ -57,6 +55,37 @@ function loadProducts() {
         modal.classList.remove("show-modal");
         overlay.classList.remove("active");
       });
+      overlay.addEventListener("click", () => {
+        modal.classList.remove("show-modal");
+        overlay.classList.remove("active");
+      });
+      const addToCartBtn = document.getElementById("add-to-cart");
+      addToCartBtn.addEventListener("click", addItemToCart);
     });
   });
 }
+
+const quantityInput = document.querySelector(".quantity-input");
+quantityInput.addEventListener("change", (e) => {
+  updateItemTotal(parseFloat(modalCardPrice.innerText.replace("$", "")), quantityChange(e));
+});
+
+function updateItemTotal(price, quantity) {
+  total = total + price * quantity;
+  total = Math.round(total * 100) / 100;
+  modalCardPrice.innerText = total;
+}
+
+function quantityChange(e) {
+  let input = e.target;
+  let inputValue = input.value;
+  if (isNaN(inputValue) || inputValue <= 0) {
+    inputValue = 0;
+  } else return inputValue;
+  updateItemTotal();
+  updateCartItems();
+}
+
+function addItemToCart() {}
+
+function updateCartItems() {}

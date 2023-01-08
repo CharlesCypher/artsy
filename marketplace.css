@@ -115,8 +115,9 @@ header {
     justify-content: space-between;
 }
 
-.artsy-header-icons img {
+.artsy-header-icons i {
     max-width: 100%;
+    font-size: 1.5rem;
     height: auto;
     cursor: pointer;
 }
@@ -257,8 +258,9 @@ header {
 /* Cart Modal */
 .modal-container {
     display: block;
-    width: 1230px;
-    max-width: 80%;
+    /* max-width: 1230px; */
+    /* width: 80%; */
+    width: max-content;
     height: auto;
     position: fixed;
     top: 45%;
@@ -297,8 +299,8 @@ header {
 
 .close-btn {
     position: absolute;
-    top: -4%;
-    right: 0;
+    top: -20px;
+    right: -10px;
     font-size: 1.8rem;
     cursor: pointer;
     z-index: 888;
@@ -321,7 +323,7 @@ header {
 }
 
 .modal-split .img-container {
-    width: 525px;
+    width: 400px;
     height: 100%;
     object-fit: cover;
     border: 1px solid #000000;
@@ -330,10 +332,17 @@ header {
 
 .modal-split img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .modal-details-container {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid var(--clr-dark);
+}
+
+.modal-product-name {
+    font-family: var(--ff-satoshi);
 }
