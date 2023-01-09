@@ -254,6 +254,10 @@ header {
     font-family: var(--ff-satoshi);
 }
 
+.product-name:hover {
+    text-decoration: underline;
+}
+
 .product-price {
     font-family: var(--ff-satoshi);
     font-size: var(--fz-small);
