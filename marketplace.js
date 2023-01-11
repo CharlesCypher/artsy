@@ -22,6 +22,8 @@ productLayout.classList.add("product-section-products-grid");
 productSection.appendChild(productLayout);
 
 function loadProducts() {
+  product = JSON.parse(localStorage.getItem("products")) || [];
+
   const productItems = products
     .map((item) => {
       return `<div class="product-card">
@@ -105,12 +107,14 @@ function loadProducts() {
       }
 
       // Create add to cart button
-      const modalBody = document.querySelector(".modal-details-body");
+      // const modalBody = document.querySelector(".modal-details-body");
+      const cartBtnContainer = document.querySelector(".cart-btn-container");
       const addToCartBtn = document.createElement("button");
       addToCartBtn.textContent = "Add to cart";
       addToCartBtn.classList.add("add-to-cart");
       addToCartBtn.setAttribute("id", "add-to-cart-btn");
-      modalBody.appendChild(addToCartBtn);
+      cartBtnContainer.innerHTML = "";
+      cartBtnContainer.appendChild(addToCartBtn);
 
       // Add Item to Cart
       addToCartBtn.addEventListener("click", addItemToCart);
@@ -136,6 +140,7 @@ function addItemToCart(e) {
   let cartBtn = e.target;
   // console.log(cartBtn);
   console.log(cartBtn);
+  console.log(product);
 }
 
 // function setBackToDefult() {}

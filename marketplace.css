@@ -185,6 +185,17 @@ header {
     padding-bottom: 1rem;
     font-family: var(--ff-satoshi);
     font-size: var(--fz-small);
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
 }
 
 .title i {
@@ -208,7 +219,8 @@ header {
 }
 
 .product-section-sidemenu-details {
-    position: fixed;
+    position: sticky;
+    top: 0;
 }
 
 .product-section-products {
@@ -262,6 +274,20 @@ header {
     font-family: var(--ff-satoshi);
     font-size: var(--fz-small);
     font-weight: var(--fw-500);
+}
+
+.by-category-title {
+    margin-block: 2.5rem;
+}
+
+.by-category-list {
+    list-style: none;
+}
+
+.by-category-list-item-input {
+    outline: none;
+    border: none;
+    background-color: var(--grey);
 }
 
 /* Cart Modal */
